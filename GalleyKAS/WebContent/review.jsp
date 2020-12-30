@@ -203,16 +203,18 @@ tbody a:hover {background-color:white; text-decoration:none;}
 							<TD colspan="6"> 작성된 후기가 없습니다. </TD>
 						</TR>
 					</c:if>
-					<c:forEach items="${listResult.list}" var="reviewList">
-						<tr>
-						<td>${reviewList.idx}</td>
-	                    <td><img src="${reviewList.poster}" style='width:130px;'></td>
-	                    <td><a class="title" href="review.kas?m=getReview&idx=${reviewList.idx}&code=${reviewList.code}">${reviewList.title}</a></td>
-	                    <td>${reviewList.name}</td>
-	                    <td>${reviewList.w_date}</td>
-	                    <td>${reviewList.views}</td>
-	                    </tr>
-	                </c:forEach>
+
+						<c:forEach items="${listResult.list}" var="reviewList">
+							<tr>
+							<td>${reviewList.idx}</td>
+		                    <td><img src="${reviewList.poster}" style='width:130px;'></td>
+		                    <td><a class="title" href="review.kas?m=getReview&idx=${reviewList.idx}&code=${reviewList.code}">${reviewList.title}</a></td>
+		                    <td>${reviewList.name}</td>
+		                    <td>${reviewList.w_date}</td>
+		                    <td>${reviewList.views}</td>
+		                    </tr>
+		                </c:forEach>
+
 					</tbody>
       
 				</table>
