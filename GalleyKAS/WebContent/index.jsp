@@ -171,50 +171,33 @@
 				<article id="content" class="test">
 		<section class="main-slide">
 			<ul style="height: 558px; transition-duration: 300ms;"><li class="clone" style="position: absolute; top: 0px; left: 0px; opacity: 0; width: 100%; transition-duration: 2000ms; z-index: 0;">
-							<a href="https://www.galleryhyundai.com/story/view/20000000130">
-								<figure><img src="imgs/main_img.png" alt=""></figure>
-								<div class="text ">
-									<span class="artist">［drənæda］</span>
-									<span class="title">Myoung Ho Lee</span>
-									<span class="date">22 September - 25 November, 2020</span>
-								</div>
+							<a href="#">
+								<figure><img src="imgs/ttttt.jpg" alt=""></figure>
+								
 							</a>
 						</li>
 				
 					
 						<li class="" style="position: absolute; top: 0px; left: 0px; opacity: 0; width: 100%; transition-duration: 2000ms; z-index: 0;">
-							<a href="https://www.galleryhyundai.com/exhibition/view/20000000016">
+							<a href="#">
 								<figure><img src="imgs/main_img1_1.jpg" alt=""></figure>
-								<div class="text ">
-									<span class="artist">The Path</span>
-									<span class="title">Kim Tschang-Yeul</span>
-									<span class="date">23 October - 29 November, 2020</span>
-								</div>
+								
 							</a>
 						</li>
 					
 				
 					
 						<li class="current" style="position: absolute; top: 0px; left: 0px; opacity: 1; width: 100%; transition-duration: 2000ms; z-index: 10;">
-							<a href="https://www.galleryhyundai.com/story/view/20000000130">
-								<figure><img src="imgs/main_img2.png"" alt=""></figure>
-								<div class="text ">
-									<span class="artist">［drənæda］</span>
-									<span class="title">Myoung Ho Lee</span>
-									<span class="date">22 September - 25 November, 2020</span>
-								</div>
+							<a href="#">
+								<figure><img src="imgs/ann.jpg" alt=""></figure>
+							
 							</a>
 						</li>
 					
 				
 			<li class="clone" style="position: absolute; top: 0px; left: 0px; opacity: 0; width: 100%; transition-duration: 2000ms; z-index: 0;">
-							<a href="https://www.galleryhyundai.com/exhibition/view/20000000016">
-								<figure><img src="imgs/main_img.png3" alt=""></figure>
-								<div class="text ">
-									<span class="artist">The Path</span>
-									<span class="title">Kim Tschang-Yeul</span>
-									<span class="date">23 October - 29 November, 2020</span>
-								</div>
+							<a href="#">
+								<figure><img src="imgs/main_img3.png" alt=""></figure>
 							</a>
 						</li></ul>
 		<div class="paging"><button type="button" class="">1</button><button type="button" class="current">2</button></div></section>
@@ -222,7 +205,7 @@
 		<section class="fixed-posts">
 			<div class="post-list column-3">
 				<ul>
-					
+					<!-- 
 						
 						<li class="video">
 							<a href="/story/view/20000000133">
@@ -251,7 +234,17 @@
 								<span class="title">Iván Navarro 이반 나바로 : Mind the Artist</span>
 							</a>
 						</li>
-						
+					 -->
+					 <c:forEach items="${Exhibit2}" var="exhibit">	
+						<li >
+							<a href="exhibit.kas?m=exhibitBoard&Exh=${exhibit.code}">
+								<figure><img src='${exhibit.poster}' alt="" style='width:504px; height:100%;'></figure>
+								<span class="category2" style='color: #888888; display:block;font-size:1.5em;'>${exhibit.artist}</span>
+								<span class="title2" style='font-size:2em; display:block;f'>${exhibit.title}</span>
+                                <span class="date2">${exhibit.e_date}</span>
+							</a>
+						</li>					 
+					 </c:forEach>
 					
 				</ul>
 			</div>
@@ -259,12 +252,14 @@
 
 		
 			<section class="sticky-post ">
-				<a href="/story/view/20000000130">
-					<figure><img src="imgs/minjeong.jpg" alt=""></figure>
+				<a href="review.kas?m=review">
+					<figure><img src="poster/event.jpg" alt=""></figure>
 					<div class="text">
-						<span class="category">News</span>
-						<span class="title">Myoung Ho Lee 이명호 :［drənæda］</span>
-						<span class="excerpt">Myoung Ho Lee’s solo exhibition [drənæna] is on view at Goeun Museum of Photography in Busan.</span>
+						<span class="category">Event</span>
+						<span class="title">회원가입 + <br/>REVIEW 작성 EVENT</span>
+						<span class="excerpt">
+							회원가입 후 <br/> 전시 후기를 남겨주시면 <br/> 툴루즈 로트렉 展 <br/>도록 할인권을 드립니다.
+						</span>
 					</div>
 				</a>
 			</section>
@@ -272,6 +267,7 @@
 
 		<section class="recent-posts vuelayer">
 			<div class="post-list column-4"><ul>
+			  <!-- 
 				<li class="">
 					<a href="/story/view/20000000131">
 						<figure><img src="imgs/press_1.jpg" alt=""></figure> 
@@ -307,42 +303,18 @@
 					atriz Cortez have participated in the second Queer Correspondence commission</span>
 					</a>
 				</li>
-		<!-- 	
-				<li class="video">
-					<a href="/story/view/20000000123">
-					<figure><img src="imgs/press_1.jpg" alt=""></figure> <span class="category">
-					Video</span> 
-					<span class="title">Iván Navarro 이반 나바로 : Homeless Lamp, the Juice Sucker</span> 
-					<span class="excerpt">Iván Navarro’s Homeless Lamp, the Juice Sucker 
-					(2004-5) has been featured in The Guggenheim Circular.</span>
-					</a>
-				</li>
-				
-				<li class="">
-					<a href="/story/view/20000000122">
-						<figure><img src="/public/2020/08/12/18/27/22/0eedc199-56ea-4a9e-a558
-						-3b89ebba93ae.crop_small.jpg" alt=""></figure> 
-						<span class="category">News</span> 
-						<span class="title">Myoung Ho Lee 이명호 : Among the Trees</span> 
-						<span class="excerpt">Myoung Ho Lee’s Tree series is presented 
-						in Among the Trees at Hayward Gallery in London.</span>
-						</a>
-				</li>
-				
-				<li class="">
-					<a href="/story/view/20000000121">
-						<figure><img src="/public/2020/08/12/15/38/27/26
-						b15877-7e31-4416-af95-090e64c10dd8.crop_small.jpg" alt="">
-						</figure> 
-						<span class="category">Press</span> 
-						<span class="title">Ik-Joong Kang 강익중 : Interview with Mark Tetto </span> 
-						<span class="excerpt">Ik-Joong Kang, who captures and records the world 
-						on 3-inches canvases, met Mark Tetto from Living Sense magazine.</span>
-					</a>
-				</li>
-				
-				<li class="video"><a href="/story/view/20000000119"><figure><img src="/public/2020/07/25/15/32/47/ccdd2931-c232-4ba9-824a-8c0208369cd9.crop_small.png" alt=""></figure> <span class="category">Video</span> <span class="title">Kang-Seung Lee 이강승 : 모어 毛漁</span> <span class="excerpt">&lt;모어 毛漁&gt;, an online live performance which was on stream on July 11, is now available on the MMCA YouTube channel. </span></a></li></ul></div> <div class="pagination"><a href="javascript:;" class="load-more">Load More</a></div></section>
-		 -->	
+			-->
+			
+	<c:forEach items="${Exhibit}" var="exhibit">	
+		<li class="">
+			<a href="exhibit.kas?m=exhibitBoard&Exh=${exhibit.code}">
+				<figure>
+				<img src='${exhibit.poster}' alt="">
+				</figure> <span class="category">${exhibit.artist}</span> 
+				<span class="title">${exhibit.title}</span> 
+				<span class="excerpt">${exhibit.e_date} </span></a>
+			</a></li>
+		</c:forEach>
 	
 	</article>
 
